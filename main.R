@@ -70,7 +70,7 @@ makeWordcloud <- function (words, filename = "wordcloud.png") {
     d <- data.frame(word = names(v), freq = v)
     pal <- brewer.pal(8, "Dark2")
     png(filename, width = 1280, height = 800)
-    topWordMagnification <- 8
+    topWordMagnification <- 7
     wordcloud(d$word, d$freq, scale = c(topWordMagnification, topWordMagnification / 8), min.freq = 2, max.words = 100, random.order = T, rot.per = .15, colors = pal)
     dev.off()
 }
