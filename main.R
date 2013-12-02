@@ -8,6 +8,9 @@ if (!exists('tweetWords')) tweetWords <- list()
 # 1) twitCred <- preHandshake() 
 # 2) twitCred$handshake() 
 # 3) postHandshake(twitCred)
+#
+# To generate all wordclouds for the default accounts being monitored, do:
+# 4) makeAllWordClouds()
 
 preHandshake <- function () {
     require(twitteR)
