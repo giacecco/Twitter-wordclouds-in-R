@@ -79,11 +79,11 @@ makeWordcloud <- function (words, filename = "wordcloud.png") {
 }
 
 makeAllWordClouds <- function (usernames = monitoredUsernames) {
+    fetchAll(usernames)
     sapply(usernames, function (twitterUsername) {
         makeWordcloud(followerDescriptionWords[twitterUsername], paste0(twitterUsername, "_followers.png"))
         makeWordcloud(followingDescriptionWords[twitterUsername], paste0(twitterUsername, "_following.png"))
         makeWordcloud(tweetWords[twitterUsername], paste0(twitterUsername, "_tweetsAndRetweets.png"))
         TRUE
     })
-    
 }
