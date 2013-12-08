@@ -87,3 +87,11 @@ makeAllWordClouds <- function (usernames = monitoredUsernames) {
         TRUE
     })
 }
+
+# This wasn't tested yet
+reportLessActiveFollowing <- function (username = "orfc") {
+    user <- getUser(username)
+    following <- user$getFriends() 
+    report <- data.frame(username = sapply(following, function (u) { u$screenName }), latestTweetDate = sapply(following, function (username) { userTimeline(username, n = 1, includeRts = TRUE)[[1]]$created }))
+    report[order(latestTweetDate), ]
+}
