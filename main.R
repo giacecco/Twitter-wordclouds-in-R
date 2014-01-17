@@ -15,7 +15,7 @@ if (!exists('tweetWords')) tweetWords <- list()
 preHandshake <- function () {
     require(twitteR)
     secret = read.csv("./secret.csv", colClasses= c("character", "character"))[1, ]
-    twitCred <- OAuthFactory$new(consumerKey = secret$consumerKey, consumerSecret = secret$consumerSecret, requestURL = "https://api.twitter.com/oauth/request_token", accessURL = "http://api.twitter.com/oauth/access_token", authURL = "http://api.twitter.com/oauth/authorize")
+    twitCred <- OAuthFactory$new(consumerKey = secret$consumerKey, consumerSecret = secret$consumerSecret, requestURL = "https://api.twitter.com/oauth/request_token", accessURL = "https://api.twitter.com/oauth/access_token", authURL = "https://api.twitter.com/oauth/authorize")
     twitCred
 }
 
